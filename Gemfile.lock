@@ -1,12 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.0.3.1)
-      concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (>= 0.7, < 2)
-      minitest (~> 5.1)
-      tzinfo (~> 1.1)
-      zeitwerk (~> 2.2, >= 2.2.2)
     async (1.26.1)
       console (~> 1.0)
       nio4r (~> 2.3)
@@ -17,20 +11,27 @@ GEM
       async-io
       websocket-driver (~> 0.7.0)
     coderay (1.1.2)
-    concurrent-ruby (1.1.6)
     console (1.8.2)
     dotenv (2.7.5)
-    faraday (1.0.1)
-      multipart-post (>= 1.2, < 3)
-    faraday_middleware (1.0.0)
-      faraday (~> 1.0)
+    faraday (2.14.1)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
+      logger
+    faraday-mashify (1.0.2)
+      faraday (~> 2.0)
+      hashie
+    faraday-multipart (1.2.0)
+      multipart-post (~> 2.0)
+    faraday-net_http (3.4.2)
+      net-http (~> 0.5)
     gli (2.19.0)
     hashie (4.1.0)
-    i18n (1.8.2)
-      concurrent-ruby (~> 1.0)
+    json (2.18.1)
+    logger (1.7.0)
     method_source (1.0.0)
-    minitest (5.14.1)
-    multipart-post (2.1.1)
+    multipart-post (2.4.1)
+    net-http (0.9.1)
+      uri (>= 0.11.1)
     nio4r (2.5.2)
     pry (0.13.1)
       coderay (~> 1.1)
@@ -38,21 +39,18 @@ GEM
     slack-ruby-bot (0.15.0)
       hashie
       slack-ruby-client (>= 0.14.0)
-    slack-ruby-client (0.14.6)
-      activesupport
-      faraday (>= 0.9)
-      faraday_middleware
+    slack-ruby-client (3.1.0)
+      faraday (>= 2.0.1)
+      faraday-mashify
+      faraday-multipart
       gli
       hashie
-      websocket-driver
-    thread_safe (0.3.6)
+      logger
     timers (4.3.0)
-    tzinfo (1.2.7)
-      thread_safe (~> 0.1)
+    uri (1.1.1)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.3.0)
 
 PLATFORMS
   ruby
